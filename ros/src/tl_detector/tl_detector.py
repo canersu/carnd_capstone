@@ -153,6 +153,7 @@ class TLDetector(object):
         if TEST_MODE_ENABLED:
             classification = light.state
         else:
+            classification = light.state
             cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
 
             # Get classification
