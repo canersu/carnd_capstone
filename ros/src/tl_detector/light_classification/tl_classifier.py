@@ -92,4 +92,3 @@ class TLClassifier(object):
             self.current_light = TrafficLight.RED
 
         return self.current_light
-

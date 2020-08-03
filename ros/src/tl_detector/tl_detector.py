@@ -34,7 +34,7 @@ class TLDetector(object):
 
         self.bridge = CvBridge()
 
-        self.light_classifier = TLClassifier(rospy.get_param('~model_file'))
+        #self.light_classifier = TLClassifier(rospy.get_param('~model_file'))
         self.listener = tf.TransformListener()
 
         self.state = TrafficLight.UNKNOWN
@@ -156,7 +156,7 @@ class TLDetector(object):
             cv_image = self.bridge.imgmsg_to_cv2(self.camera_image, "bgr8")
 
             # Get classification
-            classification = self.light_classifier.get_classification(cv_image)
+            #classification = self.light_classifier.get_classification(cv_image)
 
             # Save image (throttled)
             if SAVE_IMAGES and (self.process_count % LOGGING_THROTTLE_FACTOR == 0):
