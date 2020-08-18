@@ -104,7 +104,7 @@ double PurePursuit::calcCurvature(geometry_msgs::Point target) const
 // linear interpolation of next target
 bool PurePursuit::interpolateNextTarget(int next_waypoint, geometry_msgs::Point *next_target) const
 {
-  double ERROR = pow(10, -5);  // 0.00001
+  constexpr double ERROR = pow(10, -5);  // 0.00001
 
   int path_size = static_cast<int>(current_waypoints_.getSize());
   if (next_waypoint == path_size - 1)
